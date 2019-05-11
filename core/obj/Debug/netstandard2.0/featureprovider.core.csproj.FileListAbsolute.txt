@@ -1,0 +1,9 @@
+C:\code\featureprovider\core\bin\Debug\netstandard2.0\featureprovider.core.deps.json
+C:\code\featureprovider\core\bin\Debug\netstandard2.0\featureprovider.core.dll
+C:\code\featureprovider\core\bin\Debug\netstandard2.0\featureprovider.core.pdb
+C:\code\featureprovider\core\obj\Debug\netstandard2.0\featureprovider.core.csprojAssemblyReference.cache
+C:\code\featureprovider\core\obj\Debug\netstandard2.0\featureprovider.core.csproj.CoreCompileInputs.cache
+C:\code\featureprovider\core\obj\Debug\netstandard2.0\featureprovider.core.AssemblyInfoInputs.cache
+C:\code\featureprovider\core\obj\Debug\netstandard2.0\featureprovider.core.AssemblyInfo.cs
+C:\code\featureprovider\core\obj\Debug\netstandard2.0\featureprovider.core.dll
+C:\code\featureprovider\core\obj\Debug\netstandard2.0\featureprovider.core.pdb
