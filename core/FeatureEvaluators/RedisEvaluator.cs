@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using System.Text;
 using featureprovider.core.Models;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 
-namespace featureprovider.core.FeatureProviders
+namespace featureprovider.core.FeatureEvaluators
 {
     public class RedisEvaluator : IFeatureEvaluator
     {
@@ -11,16 +13,16 @@ namespace featureprovider.core.FeatureProviders
             return FeatureProviderEnum.Redis == featureProvider;
         }
 
-        private readonly IConfiguration Configuration;
+        private readonly IDistributedCache DistributedCache;
 
-        public RedisEvaluator(IConfiguration configuration)
+        public RedisEvaluator(IDistributedCache distributedCache)
         {
-
+            DistributedCache = distributedCache;
         }
 
         public string GetFeature(string featureName)
         {
-            return Configuration[featureName];
+            return DistributedCache.GetString(featureName);
         }
     }
 
