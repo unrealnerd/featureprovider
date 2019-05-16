@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Text;
 using featureprovider.core.Models;
-using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
+using StackExchange.Redis;
 
 namespace featureprovider.core.FeatureEvaluators
 {
@@ -13,16 +13,17 @@ namespace featureprovider.core.FeatureEvaluators
             return FeatureProviderEnum.Redis == featureProvider;
         }
 
-        private readonly IDistributedCache DistributedCache;
+        private readonly IDatabase RedisDb;
 
-        public RedisEvaluator(IDistributedCache distributedCache)
+        public RedisEvaluator(string redisServerAddress)
         {
-            DistributedCache = distributedCache;
+            ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(redisServerAddress);
+            RedisDb = redis.GetDatabase();
         }
 
         public string GetFeature(string featureName)
         {
-            return DistributedCache.GetString(featureName);
+            return RedisDb.StringGet(featureName);
         }
     }
 
