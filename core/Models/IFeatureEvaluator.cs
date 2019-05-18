@@ -5,10 +5,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace featureprovider.core.Models
 {
-    public enum FeatureProviderEnum { Configuration, Redis };
     public interface IFeatureEvaluator
     {
-        bool CanHandle(FeatureProviderEnum featureProvider);
+        bool CanHandle(string source);
 
         string GetFeature(string featureName);
 

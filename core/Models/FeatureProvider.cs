@@ -5,25 +5,26 @@ namespace featureprovider.core.Models
     using System.Linq;
     using featureprovider.core.Models;
     using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.Options;
 
     public class FeatureProvider : IFeatureProvider
     {
         private readonly IEnumerable<IFeatureEvaluator> FeatureEvaluators;
-        private readonly FeatureProviderEnum DefaultFeatureProviderEnum;
-        public FeatureProvider(IEnumerable<IFeatureEvaluator> featureEvaluators, FeatureProviderEnum defaultFeatureProviderEnum)
+        private readonly string DefaultFeatureSource;
+        public FeatureProvider(IEnumerable<IFeatureEvaluator> featureEvaluators,  IOptions<FeatureProviderOptions> options)
         {
             FeatureEvaluators = featureEvaluators;
-            DefaultFeatureProviderEnum = defaultFeatureProviderEnum;
+            DefaultFeatureSource = options.Value.DefaultFeatureSource;
         }
 
         public string Evaluate(string featureName)
         {
-            return FeatureEvaluators.Where(fe => fe.CanHandle(DefaultFeatureProviderEnum)).FirstOrDefault()?.GetFeature(featureName);
+            return FeatureEvaluators.Where(fe => fe.CanHandle(DefaultFeatureSource)).FirstOrDefault()?.GetFeature(featureName);
         }
         
-        public string Evaluate(string featureName, FeatureProviderEnum featureEvaluator)
+        public string Evaluate(string featureName, string featureSource)
         {
-            return FeatureEvaluators.Where(fe => fe.CanHandle(featureEvaluator)).FirstOrDefault()?.GetFeature(featureName);
+            return FeatureEvaluators.Where(fe => fe.CanHandle(featureSource)).FirstOrDefault()?.GetFeature(featureName);
         }
     }
 }

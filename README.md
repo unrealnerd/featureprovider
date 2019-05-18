@@ -7,9 +7,18 @@ This library aims to abstract the consumption of caching libraries. Right now yo
 
 Add this package using `dotnet add package -s <path to package>` 
 
-Once added to your application you need to register the IOC using the below method
+Once added to your application you need to register the IOC using the below method in Startup.cs
 
-`services.AddFeatureProvider(Configuration["FeatureProvider:RedisServer"]);`
+`services.AddFeatureProvider();`
+
+Add the below section to appsettings.json
+
+```json
+  "FeatureProvider":{
+    "RedisServer":"localhost",
+    "DefaultFeatureSource":"redis"
+  }
+```
 
 ## TODO
 

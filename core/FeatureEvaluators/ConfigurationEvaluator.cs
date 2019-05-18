@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using featureprovider.core.Models;
+using featureprovider.core.Utils;
 using Microsoft.Extensions.Configuration;
 
 namespace featureprovider.core.FeatureEvaluators
 {
     public class ConfigurationEvaluator : IFeatureEvaluator
     {
-        public bool CanHandle(FeatureProviderEnum featureProvider)
+        public bool CanHandle(string source)
         {
-            return FeatureProviderEnum.Configuration == featureProvider;
+            return Constants.FeatureSourceConfiguration == source;
         }
 
         private readonly IConfiguration Configuration;
