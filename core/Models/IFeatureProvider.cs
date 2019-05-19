@@ -6,5 +6,6 @@ namespace featureprovider.core.Models
     {
         string Evaluate(string featureName);
         string Evaluate(string featureName, string featureSource);
+        bool? IsEnabled(string featureName);
     }
 }

@@ -4,6 +4,7 @@ namespace featureprovider.core.Models
     using System.Collections.Generic;
     using System.Linq;
     using featureprovider.core.Models;
+    using featureprovider.core.Utils;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.Options;
 
@@ -25,6 +26,11 @@ namespace featureprovider.core.Models
         public string Evaluate(string featureName, string featureSource)
         {
             return FeatureEvaluators.Where(fe => fe.CanHandle(featureSource)).FirstOrDefault()?.GetFeature(featureName);
+        }
+
+        public bool? IsEnabled(string featureName)
+        {
+            return FeatureEvaluators.Where(fe => fe.CanHandle(DefaultFeatureSource)).FirstOrDefault()?.GetFeature(featureName).ToBool();
         }
     }
 }
