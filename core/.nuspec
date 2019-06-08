@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+        <id>featureprovider</id>
+        <version>1.0.0</version>
+        <title>Feature Provider- A simple tool to support feature toggles/ evaluators from different sources</title>
+        <authors>Arjun Shetty</authors>
+        <owners>bitsmonkey</owners>
+        <licenseUrl>https://github.com/unrealnerd/featureprovider</licenseUrl>
+        <projectUrl>https://github.com/unrealnerd/featureprovider</projectUrl>
+        <iconUrl>https://github.com/unrealnerd/featureprovider/img/feautre_provider_icon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A simple tool to support feature toggles/ evaluators from different sources like Redis cache or configuration file.</description>
+        <releaseNotes>Bug fixes and performance improvements </releaseNotes>
+        <copyright>Copyright 2019 Bitsmonkey.</copyright>
+        <tags>featuretoggle cache configuration</tags>
+        <dependencies>
+        </dependencies>
+        <summary>A simple tool to support feature toggles/ evaluators from different sources like Redis cache or configuration file.</summary>
+    </metadata>
+    <files>
+        <file src="bin\Debug\**" target="lib" />
+        <file src="..\readme.md" target="" />
+    </files>
+</package>
