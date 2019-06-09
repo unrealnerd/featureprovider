@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>FeatureProvider</PackageId>
-    <Version>1.0.0-alpha</Version>
+    <Version>1.0.1-alpha</Version>
     <Authors>bitsmonkey</Authors>
     <Company>bitsmonkey</Company>
   </PropertyGroup>
