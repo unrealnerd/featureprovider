@@ -19,8 +19,11 @@ namespace featureprovider.core.FeatureEvaluators
 
         public RedisEvaluator(IOptions<FeatureProviderOptions> options)
         {
-            ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(options.Value.RedisServer);
-            RedisDb = redis.GetDatabase();
+            if (!string.IsNullOrEmpty(options.Value.RedisServer))
+            {
+                ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(options.Value.RedisServer);
+                RedisDb = redis.GetDatabase();
+            }
         }
 
         public string GetFeature(string featureName)
