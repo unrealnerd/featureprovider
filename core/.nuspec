@@ -15,6 +15,7 @@
         <copyright>Copyright 2019 Bitsmonkey.</copyright>
         <tags>featuretoggle cache configuration</tags>
         <dependencies>
+            <dependency id="StackExchange.Redis" version="2.0"/>
         </dependencies>
         <summary>A simple tool to support feature toggles/ evaluators from different sources like Redis cache or configuration file.</summary>
     </metadata>
