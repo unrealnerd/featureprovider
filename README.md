@@ -3,6 +3,8 @@
 Feature Provider helps fetching feature toggle or feature evaluators from mutiple sources.
 This library aims to abstract the consumption of caching libraries. Right now you can access features using Redis and Basic configuration file.
 
+Right now the Nuget is targetting only for `netstandard2.0;netcoreapp2.2;`
+
 ## Usage
 
 Add this package using `dotnet add package -s <path to package>` 

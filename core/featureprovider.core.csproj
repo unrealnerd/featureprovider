@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp2.2;</TargetFrameworks>
     <PackageId>FeatureProvider</PackageId>
-    <Version>1.0.1-alpha</Version>
+    <Version>1.0.2-alpha</Version>
     <Authors>bitsmonkey</Authors>
     <Company>bitsmonkey</Company>
   </PropertyGroup>
