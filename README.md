@@ -20,6 +20,15 @@ Add the below section to appsettings.json
   }
 ```
 
+To use only configuration file provider use the below setting
+
+```json
+  "FeatureProvider":{
+    "RedisServer":"",
+    "DefaultFeatureSource":"config"
+  }
+```
+
 ## TODO
 
 - Provide ways to exclusively select caching libraries
